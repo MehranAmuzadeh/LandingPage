@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(22, 22, 22);
+}
+
+header {
+    padding: 50px 250px;
+    color: #fff;
+    justify-content: space-between;
+    display: flex;
+
+}
+
+.links {
+    gap: 20px;
+    display: flex;
+    direction: rtl;
+}
+
+.links ul {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    direction: rtl;
+
+}
+
+.myName {
+    background-color: orangered;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+.links ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.first-content {
+    display: flex;
+    direction: rtl;
+    padding: 50px 150px;
+}
+
+/* .Main-Text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 100px;
+    color: #fff;
+    text-align: center;
+    font-family: 'RGBFont', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6; 
+} */
+/* @font-face {
+    font-family: 'RGBFont';
+    src: url('fonts/RGBFont.woff2') format('woff2'),
+        url('fonts/RGBFont.woff') format('woff');
+    font-display: swap;
+}
+
+.Main-Text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 100px;
+    font-size: 48px;
+    font-family: 'RGBFont', sans-serif;
+    font-weight: bold;
+} */
+
+.Main-Text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 70px 100px;
+    font-size: 48px;
+    font-weight: bold;
+    font-family: Tahoma, sans-serif;
+
+    background: linear-gradient(90deg, #ff004c, #ffb800, #00ff88, #00b3ff, #b300ff, #ff004c);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rgb-akis 5s linear infinite;
+}
+
+@keyframes rgb-akis {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+.main-img {
+    width: 400px;
+    height: 400px;
+    border-radius: 100px;
+    box-shadow: 0 0 40px 20px rgb(22, 22, 22);
+    margin: auto 50px;
+}
+
+.lg-select {
+    border-radius: 10px;
+    margin: 10px 10px;
+    margin-top: -5px;
+}
+
+.seccond-content1 {
+    background: rgb(0, 0, 0);
+    width: 100%;
+    height: 70rem;
+}
+
+.main-seccond2 {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    padding: 100px 10px;
+    direction: rtl;
+}
+
+.box {
+    width: 800px;
+    height: 150px;
+    background-color: rgb(62, 59, 59);
+    padding: 50px;
+    margin: 20px 20px;
+    border-radius: 20px;
+}
+
+/* .box-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    color: #ffffff;
+    direction: rtl;
+    padding: 100px;
+    margin: 50px auto;
+    max-width: 1000px;
+} */
+
+/* Ana Kapsayıcı */
+.box-info {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 20px;
+    direction: rtl;
+}
+
+/* Her bir Kategori (Başlık + Kutular) */
+.skill-category {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Kategori Başlığı (زبان ها / فریم وورک ها) */
+.category-title {
+    color: #fff;
+    font-size: 28px;
+    border-right: 5px solid orangered;
+    /* Sağda turuncu çizgi */
+    padding-right: 15px;
+    margin: 0;
+}
+
+/* Kutuların Dizildiği Alan */
+.skill-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    /* Sığmazsa alt satıra geçsin */
+    gap: 20px;
+}
+
+.skill-box {
+    background-color: rgb(40, 40, 40);
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    border: 1px solid #444;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+}
+
+
+.skill-box:hover {
+    transform: translateY(-5px);
+    border-color: orangered;
+    box-shadow: 0 10px 25px rgba(255, 69, 0, 0.4);
+    color: orangered;
+}
+
+.small-text {
+    font-size: 14px;
+    color: #aaa;
+    margin-right: 5px;
+    font-family: sans-serif;
+}   
+
+
+
+
+
+.boxTwo-p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -40px 150px;
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.boxThree-p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: -40px 200px;
+    font-size: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.main-content2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 100px;
+}
+
+.box2 {
+    width: 600px;
+    height: 150px;
+    background-color: rgb(63, 62, 62);
+    margin: 50px 450px;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    display: grid;
+    gap: 20px;
+
+}
+
+.box-info2 {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.a-link {
+    color: inherit;
+    text-decoration: none;
+    background-color: orangered;
+    width: 500px;
+    margin: 1px 50px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s ease;
+}
+
+.a-link a {
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .3s ease;
+    border-bottom: 4px solid transparent;
+}
+
+.box2 a:hover {
+    border-color: rgb(231, 231, 7);
+}
+
+.line1 {
+    border-bottom: 2px solid #fff;
+    gap: 100px;
+    display: flex;
+}
+
+/* Hakkımda Kutusu */
+.box-one {
+    width: 80%; /* Ekran boyutuna göre esnek genişlik */
+    max-width: 900px; /* Çok fazla yayılmasını engeller */
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a); /* Hafif derinlik katan arka plan */
+    margin: 0 auto 100px auto; /* Ortalar ve alttan boşluk bırakır */
+    padding: 40px 50px; /* İç boşlukları ferahlattık */
+    border-radius: 20px;
+    color: #e0e0e0; /* Göz yormayan beyaz */
+    border: 1px solid #333; /* İnce bir çerçeve */
+    border-right: 5px solid orangered; /* Sağ tarafa turuncu vurgu çizgisi */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Derinlik gölgesi */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    direction: rtl; /* Farsça metinler için sağdan sola */
+    text-align: justify; /* Yazıyı iki yana yasla */
+}
+
+/* Üzerine gelince hafifçe büyüsün */
+.box-one:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(255, 69, 0, 0.15); /* Turuncu gölge */
+}
+
+/* İçindeki yazı */
+.boxOne-p {
+    font-size: 18px; /* Okunabilir bir boyut */
+    line-height: 1.8; /* Satır aralığı (çok önemli) */
+    font-family: Tahoma, sans-serif; /* Modern ve temiz font */
+    margin: 0; /* Gereksiz boşlukları sildik */
+}
+
+.seccond-content2 {
+    padding: 70px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.footer {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto 500px;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 100px;
+}
+
+.footer input {
+    border-radius: 20px;
+    width: 300px;
+}
+
+.username,
+.g-mail {
+    height: 50px;
+    padding: 10px;
+}
+
+.comments {
+    height: 200px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.commnets-img {
+    width: 600px;
+    height: 600px;
+    border-radius: 100px;
+}
+
+.form {
+    display: grid;
+    gap: 20px;
+    color: #fff;
+    padding: 50px;
+}
+
+.submit {
+    height: 50px;
+}
