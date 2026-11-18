@@ -13,71 +13,105 @@ header {
     color: #fff;
     justify-content: space-between;
     display: flex;
-
+    align-items: center;
 }
 
+/* ===== MASAÜSTÜ MENÜ ===== */
 .links {
     gap: 20px;
     display: flex;
     direction: rtl;
+    align-items: center;
 }
 
-.links ul {
+.nav-menu {
     display: flex;
     gap: 50px;
     list-style: none;
     direction: rtl;
+}
 
+.nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    padding: 6px 2px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: orangered;
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: orangered;
+}
+
+.nav-menu li a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger — masaüstünde gizli */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid orangered;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: orangered;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .myName {
     background-color: orangered;
     padding: 10px 10px;
     border-radius: 10px;
+    white-space: nowrap;
 }
 
-.links ul li a {
-    text-decoration: none;
-    color: #fff;
-}
+/* Eski kural kaldırıldı — .nav-menu li a zaten var */
+/* .links ul li a { ... } */
 
 .first-content {
     display: flex;
     direction: rtl;
     padding: 50px 150px;
+    align-items: center;
 }
 
-/* .Main-Text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 70px 100px;
-    color: #fff;
-    text-align: center;
-    font-family: 'RGBFont', sans-serif;
-    font-size: 48px;
-    font-weight: bold;
-     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6; 
-} */
-/* @font-face {
-    font-family: 'RGBFont';
-    src: url('fonts/RGBFont.woff2') format('woff2'),
-        url('fonts/RGBFont.woff') format('woff');
-    font-display: swap;
-}
-
-.Main-Text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 70px 100px;
-    font-size: 48px;
-    font-family: 'RGBFont', sans-serif;
-    font-weight: bold;
-} */
-
+/* ===== MAIN TEXT ===== */
 .Main-Text {
     display: flex;
     justify-content: center;
@@ -87,7 +121,6 @@ header {
     font-size: 48px;
     font-weight: bold;
     font-family: Tahoma, sans-serif;
-
     background: linear-gradient(90deg, #ff004c, #ffb800, #00ff88, #00b3ff, #b300ff, #ff004c);
     background-size: 300% 100%;
     -webkit-background-clip: text;
@@ -112,6 +145,8 @@ header {
     border-radius: 100px;
     box-shadow: 0 0 40px 20px rgb(22, 22, 22);
     margin: auto 50px;
+    object-fit: cover;
+    flex-shrink: 0;
 }
 
 .lg-select {
@@ -120,10 +155,12 @@ header {
     margin-top: -5px;
 }
 
+/* ===== İKİNCİ BÖLÜM ===== */
 .seccond-content1 {
     background: rgb(0, 0, 0);
     width: 100%;
-    height: 70rem;
+    /* height: 70rem;  →  sabit yükseklik kaldırıldı */
+    padding-bottom: 60px;
 }
 
 .main-seccond2 {
@@ -134,27 +171,7 @@ header {
     direction: rtl;
 }
 
-.box {
-    width: 800px;
-    height: 150px;
-    background-color: rgb(62, 59, 59);
-    padding: 50px;
-    margin: 20px 20px;
-    border-radius: 20px;
-}
-
-/* .box-info {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    color: #ffffff;
-    direction: rtl;
-    padding: 100px;
-    margin: 50px auto;
-    max-width: 1000px;
-} */
-
-/* Ana Kapsayıcı */
+/* ===== SKILLS ===== */
 .box-info {
     display: flex;
     flex-direction: column;
@@ -165,28 +182,23 @@ header {
     direction: rtl;
 }
 
-/* Her bir Kategori (Başlık + Kutular) */
 .skill-category {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-/* Kategori Başlığı (زبان ها / فریم وورک ها) */
 .category-title {
     color: #fff;
     font-size: 28px;
     border-right: 5px solid orangered;
-    /* Sağda turuncu çizgi */
     padding-right: 15px;
     margin: 0;
 }
 
-/* Kutuların Dizildiği Alan */
 .skill-boxes {
     display: flex;
     flex-wrap: wrap;
-    /* Sığmazsa alt satıra geçsin */
     gap: 20px;
 }
 
@@ -208,7 +220,6 @@ header {
     min-width: 120px;
 }
 
-
 .skill-box:hover {
     transform: translateY(-5px);
     border-color: orangered;
@@ -221,30 +232,9 @@ header {
     color: #aaa;
     margin-right: 5px;
     font-family: sans-serif;
-}   
-
-
-
-
-
-.boxTwo-p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: -40px 150px;
-    font-size: 40px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.boxThree-p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: -40px 200px;
-    font-size: 25px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
+/* ===== PROJELER ===== */
 .main-content2 {
     display: flex;
     justify-content: center;
@@ -254,18 +244,20 @@ header {
 }
 
 .box2 {
-    width: 600px;
-    height: 150px;
+    /* margin: 50px 450px;  →  taşmaya yol açıyordu, düzeltildi */
+    width: 90%;
+    max-width: 600px;
+    min-height: 150px;
     background-color: rgb(63, 62, 62);
-    margin: 50px 450px;
-    padding: 10px;
+    margin: 30px auto;
+    padding: 15px;
     border-radius: 10px;
     color: #fff;
     text-align: center;
     font-size: 20px;
     display: grid;
     gap: 20px;
-
+    align-content: center;
 }
 
 .box-info2 {
@@ -278,8 +270,9 @@ header {
     color: inherit;
     text-decoration: none;
     background-color: orangered;
-    width: 500px;
-    margin: 1px 50px;
+    width: 90%;
+    max-width: 500px;
+    margin: 1px auto;
     text-align: center;
     padding: 10px;
     border-radius: 10px;
@@ -287,6 +280,8 @@ header {
     justify-content: center;
     align-items: center;
     transition: .3s ease;
+    word-break: break-all;
+    font-size: 14px;
 }
 
 .a-link a {
@@ -300,41 +295,42 @@ header {
     border-color: rgb(231, 231, 7);
 }
 
+/* ===== HAKKIMDA ===== */
 .line1 {
     border-bottom: 2px solid #fff;
-    gap: 100px;
-    display: flex;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin: 40px auto;
+    max-width: 90%;
 }
 
-/* Hakkımda Kutusu */
 .box-one {
-    width: 80%; /* Ekran boyutuna göre esnek genişlik */
-    max-width: 900px; /* Çok fazla yayılmasını engeller */
-    background: linear-gradient(145deg, #1a1a1a, #2a2a2a); /* Hafif derinlik katan arka plan */
-    margin: 0 auto 100px auto; /* Ortalar ve alttan boşluk bırakır */
-    padding: 40px 50px; /* İç boşlukları ferahlattık */
+    width: 80%;
+    max-width: 900px;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    margin: 0 auto 100px auto;
+    padding: 40px 50px;
     border-radius: 20px;
-    color: #e0e0e0; /* Göz yormayan beyaz */
-    border: 1px solid #333; /* İnce bir çerçeve */
-    border-right: 5px solid orangered; /* Sağ tarafa turuncu vurgu çizgisi */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Derinlik gölgesi */
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-right: 5px solid orangered;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    direction: rtl; /* Farsça metinler için sağdan sola */
-    text-align: justify; /* Yazıyı iki yana yasla */
+    direction: rtl;
+    text-align: justify;
 }
 
-/* Üzerine gelince hafifçe büyüsün */
 .box-one:hover {
     transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(255, 69, 0, 0.15); /* Turuncu gölge */
+    box-shadow: 0 15px 40px rgba(255, 69, 0, 0.15);
 }
 
-/* İçindeki yazı */
 .boxOne-p {
-    font-size: 18px; /* Okunabilir bir boyut */
-    line-height: 1.8; /* Satır aralığı (çok önemli) */
-    font-family: Tahoma, sans-serif; /* Modern ve temiz font */
-    margin: 0; /* Gereksiz boşlukları sildik */
+    font-size: 18px;
+    line-height: 1.8;
+    font-family: Tahoma, sans-serif;
+    margin: 0;
 }
 
 .seccond-content2 {
@@ -345,7 +341,7 @@ html {
     scroll-behavior: smooth;
 }
 
-
+/* ===== FOOTER (MASAÜSTÜ) ===== */
 .footer {
     display: grid;
     justify-content: space-between;
@@ -355,11 +351,14 @@ html {
     margin: 0 auto;
     gap: 20px;
     padding: 100px;
+    position: relative;
 }
 
 .footer input {
     border-radius: 20px;
     width: 300px;
+    border: none;
+    outline: none;
 }
 
 .username,
@@ -372,12 +371,18 @@ html {
     height: 200px;
     border-radius: 20px;
     padding: 10px;
+    border: none;
+    outline: none;
+    resize: vertical;
+    font-family: inherit;
 }
 
 .commnets-img {
     width: 600px;
     height: 600px;
     border-radius: 100px;
+    object-fit: cover;
+    display: block;
 }
 
 .form {
@@ -389,4 +394,368 @@ html {
 
 .submit {
     height: 50px;
+    background: orangered;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit:hover {
+    background: #ff5a1f;
+}
+
+
+/* ============================================================
+   RESPONSIVE — 1024px (TABLET)
+   ============================================================ */
+@media (max-width: 1024px) {
+    header {
+        padding: 30px 50px;
+    }
+
+    .first-content {
+        padding: 30px 40px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Main-Text {
+        padding: 30px 20px;
+        font-size: 36px;
+    }
+
+    .main-img {
+        width: 320px;
+        height: 320px;
+        margin: 30px auto;
+    }
+
+    .box2 {
+        width: 90%;
+        max-width: 550px;
+        margin: 25px auto;
+        min-height: auto;
+    }
+
+    .a-link {
+        width: 90%;
+        max-width: 480px;
+        margin: 1px auto;
+    }
+
+    /* --- FOOTER: resim arka plana geçer --- */
+    .footer {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        width: 100%;
+        padding: 40px 20px;
+        position: relative;
+        overflow: hidden;
+        min-height: 600px;
+    }
+
+    /* Resim tam arka plan */
+    .commnets-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        object-fit: cover;
+        z-index: 0;
+        filter: brightness(0.35) blur(1px);
+    }
+
+    /* Karanlık overlay — okunabilirlik */
+    .footer::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.55) 0%,
+                rgba(0, 0, 0, 0.78) 100%);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    /* Form cam efektli, resmin üstünde */
+    .form {
+        position: relative;
+        z-index: 2;
+        padding: 30px;
+        width: 100%;
+        max-width: 450px;
+        background: rgba(20, 20, 20, 0.55);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 69, 0, 0.4);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer input,
+    .username,
+    .g-mail,
+    .comments,
+    .submit {
+        width: 100%;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVE — 768px (TELEFON / HAMBURGER MENÜ)
+   ============================================================ */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .links {
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        gap: 10px;
+    }
+
+    /* Açılır panel */
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        background: rgba(10, 10, 10, 0.97);
+        backdrop-filter: blur(10px);
+        border-top: 2px solid orangered;
+        border-bottom: 2px solid orangered;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        z-index: 100;
+    }
+
+    .nav-menu.open {
+        max-height: 320px;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 15px;
+        font-size: 16px;
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-menu li a::after {
+        display: none;
+    }
+
+    .myName {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .lg-select {
+        font-size: 14px;
+    }
+
+    /* İçerik */
+    .first-content {
+        padding: 20px 15px;
+    }
+
+    .Main-Text {
+        font-size: 26px;
+        padding: 20px 10px;
+        line-height: 1.5;
+    }
+
+    .main-img {
+        width: 260px;
+        height: 260px;
+        border-radius: 60px;
+        margin: 20px auto;
+    }
+
+    .main-seccond2 {
+        padding: 40px 15px;
+        font-size: 1.2rem;
+    }
+
+    .about-me {
+        font-size: 1.8rem;
+    }
+
+    .box-one {
+        width: 94%;
+        padding: 20px;
+        margin-bottom: 50px;
+    }
+
+    .boxOne-p {
+        font-size: 16px;
+        line-height: 1.7;
+        text-align: right;
+    }
+
+    .box-info {
+        margin: 40px auto;
+        padding: 15px;
+        gap: 30px;
+    }
+
+    .category-title {
+        font-size: 22px;
+    }
+
+    .skill-box {
+        padding: 14px 20px;
+        font-size: 16px;
+        min-width: 90px;
+    }
+
+    .main-content2 {
+        padding: 50px 15px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .seccond-content2 {
+        padding: 30px 15px;
+    }
+
+    .box2 {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .a-link {
+        width: 100%;
+        padding: 10px 8px;
+        font-size: 13px;
+    }
+
+    /* Footer — daha kompakt */
+    .footer {
+        padding: 30px 15px;
+        min-height: 520px;
+    }
+
+    .form {
+        padding: 20px;
+        gap: 14px;
+        border-radius: 16px;
+        max-width: 100%;
+    }
+
+    .commnets-img {
+        filter: brightness(0.3) blur(1.5px);
+    }
+
+    .footer::before {
+        background: linear-gradient(180deg,
+                rgba(0, 0, 0, 0.6) 0%,
+                rgba(0, 0, 0, 0.85) 100%);
+    }
+
+    .form label {
+        font-size: 14px;
+    }
+
+    .username,
+    .g-mail {
+        height: 44px;
+    }
+
+    .comments {
+        height: 140px;
+    }
+
+    .submit {
+        height: 44px;
+    }
+}
+
+
+/* ============================================================
+   RESPONSIVE — 480px (KÜÇÜK TELEFON)
+   ============================================================ */
+@media (max-width: 480px) {
+    .myName {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .Main-Text {
+        font-size: 22px;
+    }
+
+    .main-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 40px;
+    }
+
+    .main-seccond2 {
+        font-size: 1rem;
+    }
+
+    .about-me {
+        font-size: 1.5rem;
+    }
+
+    .boxOne-p {
+        font-size: 15px;
+    }
+
+    .category-title {
+        font-size: 18px;
+    }
+
+    .skill-box {
+        padding: 10px 15px;
+        font-size: 14px;
+        min-width: 70px;
+        flex: 1 1 auto;
+    }
+
+    .main-content2 {
+        font-size: 1.2rem;
+    }
+
+    .a-link {
+        font-size: 11px;
+        padding: 8px 6px;
+    }
+
+    .form {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    /* .footer {
+        min-height: 480px;
+        padding: 20px 12px;
+    } */
 }
